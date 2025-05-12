@@ -56,8 +56,8 @@ const App: React.FC = () => {
       selectedChart === 'chart2'
         ? { name: form.name, sales: +form.value }
         : selectedChart === 'chart4'
-        ? { name: form.name, users: +form.value }
-        : { name: form.name, value: +form.value };
+          ? { name: form.name, users: +form.value }
+          : { name: form.name, value: +form.value };
 
     setData(prev => ({
       ...prev,
@@ -120,7 +120,7 @@ const App: React.FC = () => {
               outerRadius={100}
               label
             >
-              {chart.map((entry, index) => (
+              {chart.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
